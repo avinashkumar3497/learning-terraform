@@ -9,6 +9,12 @@ provider "aws" {
   region     = "us-east-1"
 }
 
+resource "aws_cloud9_environment_ec2" "example" {
+  instance_type = "t2.micro"
+  name          = "DevEnv"
+  image_id      = "amazonlinux-2023-x86_64"
+}
+
 resource "aws_budgets_budget" "one_dollar" {
   name         = "one_dollar"
   time_unit    = "MONTHLY"
