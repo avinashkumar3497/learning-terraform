@@ -56,3 +56,8 @@ resource "aws_iam_role" "aws-elasticbeanstalk-service-role" {
     "arn:aws:iam::aws:policy/AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy"
     ]
 }
+
+resource "aws_iam_instance_profile" "aws-elasticbeanstalk-ec2-instance-profile" {
+  name = "aws-elasticbeanstalk-ec2-instance-profile"
+  role = aws_iam_role.aws-elasticbeanstalk-ec2-role.name
+}
