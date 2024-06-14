@@ -1,5 +1,5 @@
-resource "aws_iam_role" "eb_ec2-role" {
-  name                = "eb_ec2-role"
+resource "aws_iam_role" "aws-elasticbeanstalk-ec2-role" {
+  name                = "aws-elasticbeanstalk-ec2-role"
 
   //it declares the trusted entity for the role.
   //While creating a role in IAM. In the review section it shows this trust policy.
