@@ -9,16 +9,16 @@ provider "aws" {
   region     = "us-east-1"
 }
 
-# resource "aws_elastic_beanstalk_application" "tftest" {
-#   name        = "tf-test-name"
-#   description = "tf-test-desc"
-# }
+resource "aws_elastic_beanstalk_application" "tftest" {
+  name        = "tf-test-name"
+  description = "tf-test-desc"
+}
 
-# resource "aws_elastic_beanstalk_environment" "tfenvtest" {
-#   name                = "tf-test-name"
-#   application         = aws_elastic_beanstalk_application.tftest.name
-#   solution_stack_name = "64bit Amazon Linux 2015.03 v2.0.3 running Go 1.4"
-# }
+resource "aws_elastic_beanstalk_environment" "tfenvtest" {
+  name                = "tf-test-name"
+  application         = aws_elastic_beanstalk_application.tftest.name
+  solution_stack_name = "64bit Amazon Linux 2023 v6.1.6 running Node.js 20"
+}
 
 resource "aws_cloud9_environment_ec2" "DevEnv" {
   instance_type = "t2.micro"
