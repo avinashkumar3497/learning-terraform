@@ -23,7 +23,8 @@ resource "aws_iam_role" "aws-elasticbeanstalk-ec2-role" {
   managed_policy_arns = [
     "arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier",
     "arn:aws:iam::aws:policy/AWSElasticBeanstalkWorkerTier",
-    "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker"
+    "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker",
+    "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
     ]
 }
 
