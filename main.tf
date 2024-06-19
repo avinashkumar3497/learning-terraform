@@ -23,6 +23,11 @@ resource "aws_elastic_beanstalk_environment" "tfenvtest-demo" {
     name      = "IamInstanceProfile"
     value     = "aws-elasticbeanstalk-ec2-instance-profile"
   }
+  setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "EnvironmentType"
+    value     = "SingleInstance"
+  }
 }
 
 resource "aws_cloud9_environment_ec2" "DevEnv" {
