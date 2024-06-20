@@ -28,6 +28,11 @@ resource "aws_elastic_beanstalk_environment" "tfenvtest-demo" {
     name      = "EnvironmentType"
     value     = "SingleInstance"
   }
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "EC2KeyName"
+    value     = "avinash-aws"
+  }  
 }
 
 resource "aws_cloud9_environment_ec2" "DevEnv" {
