@@ -34,37 +34,13 @@ resource "aws_elastic_beanstalk_environment" "tfenvtest-demo" {
     value     = "avinash-aws"
   }  
 }
+resource "aws_instance" "demo_server" {
+  ami           = "ami-00beae93a2d981137"
+  instance_type = "t3.micro"
 
-resource "aws_cloud9_environment_ec2" "DevEnv" {
-  instance_type = "t2.micro"
-  name          = "DevEnv"
-  image_id      = "amazonlinux-2023-x86_64"
-}
-
-resource "aws_budgets_budget" "one_dollar" {
-  name         = "one_dollar"
-  time_unit    = "MONTHLY"
-  budget_type  = "COST"
-  limit_amount = "1"
-  limit_unit   = "USD"
-}
-
-resource "aws_budgets_budget" "five_dollar" {
-  name         = "five_dollar"
-  time_unit    = "MONTHLY"
-  budget_type  = "COST"
-  limit_amount = "5"
-  limit_unit   = "USD"
-}
-
-resource "aws_budgets_budget" "ten_dollar" {
-  name         = "ten_dollar"
-  time_unit    = "MONTHLY"
-  budget_type  = "COST"
-  limit_amount = "10"
-  limit_unit   = "USD"
-}
-
+  tags = {
+    Name = "HelloWorld"
+  }
 #resource "<provider>_<resource_type>" "name" {
 # config options...
 # key = "value" 
