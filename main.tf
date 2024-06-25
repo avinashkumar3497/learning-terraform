@@ -34,13 +34,7 @@ resource "aws_elastic_beanstalk_environment" "tfenvtest-demo" {
     value     = "avinash-aws"
   }  
 }
-resource "aws_instance" "demo_server" {
-  ami           = "ami-00beae93a2d981137"
-  instance_type = "t3.micro"
 
-  tags = {
-    Name = "HelloWorld"
-  }
 #resource "<provider>_<resource_type>" "name" {
 # config options...
 # key = "value" 
