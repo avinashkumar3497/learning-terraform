@@ -6,7 +6,7 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 resource "aws_elastic_beanstalk_application" "tftest" {
@@ -32,7 +32,7 @@ resource "aws_elastic_beanstalk_environment" "tfenvtest-demo" {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "EC2KeyName"
     value     = "avinash-aws"
-  }  
+  }
 }
 
 #resource "<provider>_<resource_type>" "name" {
