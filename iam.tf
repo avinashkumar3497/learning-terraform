@@ -62,3 +62,8 @@ resource "aws_iam_instance_profile" "aws-elasticbeanstalk-ec2-instance-profile" 
   name = "aws-elasticbeanstalk-ec2-instance-profile"
   role = aws_iam_role.aws-elasticbeanstalk-ec2-role.name
 }
+
+resource "aws_iam_instance_profile" "aws-elasticbeanstalk-ec2-instance-profile-2" {
+  name = "aws-elasticbeanstalk-ec2-role"
+  role = aws_iam_role.aws-elasticbeanstalk-ec2-role.name
+}
